@@ -3,6 +3,7 @@ import { middleware } from './kernel.js'
 const UserController = () => import('#controllers/user_controller')
 const StudentsController = () => import('#controllers/students_controller')
 const AuthController = () => import('#controllers/auth_controller')
+const CoursesController = () => import('#controllers/courses_controller')
 
 router.post('login', [AuthController, 'login'])
 router.post('logout', [AuthController, 'logout']).use(middleware.auth())
@@ -16,6 +17,12 @@ router
     router.post('student/create', [StudentsController, 'create'])
     router.patch('student/:id/edit', [StudentsController, 'update'])
     router.delete('student/:id', [StudentsController, 'destroy'])
+
+    router.get('course/list', [CoursesController, 'index'])
+    router.get('course/:id', [CoursesController, 'show'])
+    router.post('course/create', [CoursesController, 'create'])
+    router.patch('course/:id/edit', [CoursesController, 'update'])
+    router.delete('course/:id', [CoursesController, 'destroy'])
   })
   .use(middleware.auth())
   .prefix('admin')
