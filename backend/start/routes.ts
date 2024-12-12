@@ -29,4 +29,5 @@ router
     router.get('course/:id/student/list', [StudentsCoursesController, 'getStudentsCourse'])
   })
   .use(middleware.auth())
+  .use(middleware.admin())
   .prefix('admin')
