@@ -12,8 +12,9 @@ O backend foi desenvolvido com AdonisJS, seguindo o padrão MVC para modularidad
 
 1. **Instalação de dependências:** `pnpm install`
 2. **Configuração do `.env`:** Renomeie o arquivo `.env.example` para `.env` e configure as credenciais de acesso ao banco de dados.
-3. **Inicialização do servidor:** `pnpm run dev` (o servidor ficará disponível em `http://localhost:3333`)
-4. **Migrações e Seeders:**
+3. **Gerar o APP_KEY no `.env` :** `node ace generate:key` 
+4. **Inicialização do servidor:** `pnpm run dev` (o servidor ficará disponível em `http://localhost:3333`)
+5. **Migrações e Seeders:**
    - `node ace migrate:run` (cria as tabelas do banco de dados)
    - `node ace db:seed` (popular as tabelas com dados iniciais - um usuário, estudantes e cursos)
 
@@ -30,7 +31,8 @@ O projeto inclui sistema de rotas, store, autenticação e CRUD de estudantes.
 **Para executar o frontend:**
 
 1. **Instalação de dependências:** `pnpm install`
-2. **Inicialização do servidor de desenvolvimento:** `pnpm run dev`
+2. **Criar o `.env`:** Adicione essa chave `VITE_API_BASE_URL=http://localhost:PortaBackend`
+3. **Inicialização do servidor de desenvolvimento:** `pnpm run dev`
 
 **Observação:** O backend precisa estar configurado e rodando para o frontend funcionar corretamente.
 
