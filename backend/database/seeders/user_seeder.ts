@@ -10,7 +10,7 @@ export default class extends BaseSeeder {
       user.useTransaction(trx)
       await User.create({
         name: 'Admin',
-        email: 'admin1@teste.com',
+        email: 'admin@teste.com',
         password: 'admin1234',
       })
       await trx.commit()
