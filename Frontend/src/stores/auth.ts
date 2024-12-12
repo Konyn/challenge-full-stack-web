@@ -8,7 +8,7 @@ import { defineStore } from "pinia";
 export const useAuthStore = defineStore("auth", {
   state: () => ({
     user: {} as IUser,
-    errors: null,
+    errors: null
   }),
   actions: {
     async setUser(payload: IAuth) {
