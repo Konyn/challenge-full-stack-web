@@ -20,7 +20,10 @@ export default class AdminServices {
     return response;
   }
   static async update(payload: IStudent) {
-    return await apiClient.patch(`/admin/student/${payload.id}/edit`, payload);
+    return  await apiClient.patch(
+      `/admin/student/${payload.id}/edit`,
+      payload
+    );
   }
   static async delete(id: string | number) {
     const response = await apiClient.delete(`/admin/student/${id}`);
